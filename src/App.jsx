@@ -1,11 +1,12 @@
 import {Route, Routes } from 'react-router-dom';
+
 import Home from './pages/homePage/Home.jsx';
 import NewPost from './pages/newPostPage/NewPost.jsx';
 import Overview from './pages/overviewPage/Overview.jsx';
 import PostDetail from './pages/postDetailPage/PostDetail.jsx';
-import './App.css'
 import NotFound from './pages/notFoundPage/NotFound.jsx';
 import Navigation from './components/navigation/Navigation.jsx';
+import './App.css'
 
 function App() {
 
