@@ -1,16 +1,6 @@
 .main-navigation {
-    background-color: var(--color-secondary);
+    background: linear-gradient(37deg, var(--color-secondary) 0%, var(--color-secondary) 8%, var(--color-primary) 100%);
     padding: 16px 0;
-}
-
-.main-navigation a,
-.main-navigation a:visited {
-    color: white;
-    font-weight: 600;
-}
-
-.main-navigation a:hover {
-    color: var(--color-primary);
 }
 
 .inner-nav-container {
@@ -25,6 +15,17 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.main-navigation a,
+.main-navigation a:visited {
+    color: white;
+    font-weight: 600;
+}
+
+.main-navigation a:hover {
+    color: var(--color-secondary);
+}
+
 
 .main-navigation-links {
     list-style: none;

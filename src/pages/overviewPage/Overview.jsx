@@ -6,6 +6,7 @@ import ErrorMessage from '../../components/errorMessage/ErrorMessage.jsx';
 import Button from '../../components/button/Button.jsx';
 
 function Overview() {
+
     const [posts, setPosts] = useState([]);
     const [error, toggleError] = useState(false);
 
@@ -23,15 +24,20 @@ function Overview() {
     }
 
     return (
-        <section className="overview-section outer-content-container">
+        <section className="outer-content-container overview-section ">
             <div className="inner-content-container">
+
                 <Button type="button" onClick={fetchPosts} variant="primary">Haal alle posts op</Button>
+
                 {posts.length > 0 && (
                     <>
                         <h1>Bekijk alle {posts.length} posts op het platform</h1>
+
                         <ul className="post-list">
                             {posts.map((post) => {
+
                                 return <PostItem
+
                                     key={post.id}
                                     id={post.id}
                                     title={post.title}
@@ -44,6 +50,7 @@ function Overview() {
                         </ul>
                     </>
                 )}
+
                 {error && <ErrorMessage message="Er is iets misgegaan bij het ophalen van de data. Probeer het opnieuw" />}
             </div>
         </section>

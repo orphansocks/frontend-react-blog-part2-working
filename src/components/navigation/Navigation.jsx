@@ -7,7 +7,7 @@ function Navigation() {
     const navigate = useNavigate();
 
     return (
-        <nav className="main-navigation outer-content-container">
+        <nav className="outer-content-container main-navigation">
             <div className="inner-nav-container">
                 <Button type="button" variant="invisible" onClick={() => navigate('/')}>
                     <img src={logoMedium} alt="Logo that links to home page"/>

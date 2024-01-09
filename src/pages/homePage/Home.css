@@ -7,12 +7,16 @@
     width: 500px;
 }
 
-.section-home-branding {
+.section-home-featured {
     background-color: var(--color-secondary-light);
     text-align: center;
 }
 
-.section-home-branding p {
+.section-home-featured p {
     font-size: 1.3em;
-    background-color: var(--color-secondary-light);
+}
+
+.section-featured-paragraph {
+    background-color: white;
+
 }

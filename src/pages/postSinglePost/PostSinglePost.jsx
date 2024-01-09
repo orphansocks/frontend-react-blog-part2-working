@@ -1,12 +1,12 @@
 import {Link, useParams} from 'react-router-dom';
 import formatDateString from '../../helpers/formatDateString.js';
 import {CaretLeft, Clock} from "@phosphor-icons/react";
-import './PostDetail.css';
+import './PostSinglePost.css';
 import {useState} from 'react';
 import axios from 'axios';
 import Button from '../../components/button/Button.jsx';
 
-function PostDetail() {
+function PostSinglePost() {
     const [post, setPost] = useState([]);
     const [error, toggleError] = useState(false);
 
@@ -26,10 +26,13 @@ function PostDetail() {
     }
 
     return (
-        <section className="post-detail-section outer-content-container">
+        <section className="outer-content-container single-post-section ">
             <div className="inner-content-container">
-                <Button type="button" onClick={fetchPost} variant="primary">Haal de post op</Button>
-                {Object.keys(post).length > 0 && (<>
+
+                <Button type="button" onClick={fetchPost} variant="primary">Haal de blog op</Button>
+
+                {Object.keys(post).length > 0 && (
+                    <>
                     <h1>{post.title}</h1>
                     <h2>{post.subtitle}</h2>
                     <p className="post-detail-author">Geschreven door <em>{post.author}</em> op {formatDateString(post.created)}
@@ -41,8 +44,10 @@ function PostDetail() {
                     <p>{post.content}</p>
                     <p>{post.comments} reacties - {post.shares} keer gedeeld</p>
 
-                </>)}
+                </>
+                )}
                 {error && <p>Er is iets misgegaan bij het ophalen van de data. Probeer het opnieuw</p>}
+
                 <Link to="/posts" className="back-link">
                     <CaretLeft color="#38E991" size={22}/>
                     <p>Terug naar de overzichtspagina</p>
@@ -52,4 +57,4 @@ function PostDetail() {
     );
 }
 
-export default PostDetail;
+export default PostSinglePost;

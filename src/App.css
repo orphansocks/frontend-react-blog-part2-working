@@ -1,4 +1,4 @@
-/* De buitenste container is altijd de volledige schermbreedte. Het is een flexbox container die zijn inhoud altijd netjes horizontaal centreert */
+/* DE OUTER CONTAINER IS ALTIJD 100% SCHERMBREEDTE EN CENTREERT DE BINNENSTE CONTENT */
 .outer-content-container {
   width: 100%;
   display: flex;
@@ -6,13 +6,15 @@
   justify-content: center;
 }
 
-/*De binnenste container is maximaal 1400px breed, zodat het er ook goed uitziet op brede schermen.
-Hij mag krimpen als het scherm minder breed wordt, maar niet groeien als er meer ruimte is.*/
+/*DE BINNENSTE CONTAINER HEEFT EEN x BREEDTE ZODAT DE CONTENT NIET ZOVER WORDT UITGEREKT OP EEN
+SUPPER BREED SCHERM. DE CONTAINER MAG KRIMPEN EN NIET UITZETTEN*/
 .inner-content-container {
   flex-basis: 1400px;
   flex-shrink: 1;
   flex-grow: 0;
 }
+
+/* WAAROM DEZE TEXT-RESTRICTION CONTAINER  MET EEN BREEDTE VAN 1000PX?*/
 
 .inner-content-container__text-restriction {
   flex-basis: 1000px;
@@ -28,12 +30,4 @@ Hij mag krimpen als het scherm minder breed wordt, maar niet groeien als er meer
   /*We zorgen er ook voor dat deze flex-item op haar beurt ook weer een flexbox container is, waarin alle children onder elkaar komen te staan*/
   display: flex;
   flex-direction: column;
-}
-
-.footer-navigation {
-  background-color: var(--color-primary);
-  color: var(--color-secondary);
-  text-align: center;
-  padding: 32px 0;
-  font-weight: 600;
 }
